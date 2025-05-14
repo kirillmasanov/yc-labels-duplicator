@@ -14,24 +14,30 @@
 ---
 ### Использование
 
-1. Клонируйте репозиторий:
-
+1. Установите [YC CLI](https://cloud.yandex.com/docs/cli/quickstart)
+2. Добавьте переменные окружения для аутентификации terraform в Yandex Cloud
+```bash
+export YC_TOKEN=$(yc iam create-token)
+export YC_CLOUD_ID=$(yc config get cloud-id)
+export YC_FOLDER_ID=$(yc config get folder-id)
+```
+3. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/kirillmasanov/yc-labels-duplicator
    cd yc-labels-duplicator
-2. Настройте файл `terraform.tfvars` или передайте необходимые переменные вручную. Например, создайте `terraform.tfvars`:
+4. Настройте файл `terraform.tfvars` или передайте необходимые переменные вручную. Например, создайте `terraform.tfvars`:
 ```bash
 folder_id = "your-folder-id"
 ```
-3. Инициализируйте Terraform:
+5. Инициализируйте Terraform:
 ```tf
 terraform init
 ```
-4. Проверьте план:
+6. Проверьте план:
 ```tf
 terraform plan
 ```
-5. Примените конфигурацию:
+7. Примените конфигурацию:
 ```tf
 terraform apply
 ```
