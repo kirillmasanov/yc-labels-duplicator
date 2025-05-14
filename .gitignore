@@ -1,0 +1,23 @@
+# Игнорировать файлы состояния Terraform
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Локальные переменные (override)
+*.tfvars
+
+# Настройки среды и IDE
+.terraform/
+.idea/
+.vscode/
+
+# Логи и временные файлы
+*.log
+
+# Игнорируем сгенерированный архив zip с функцией
+code.zip
+
+# Игнорировать скрытые файлы MacOS
+.DS_Store
+
+backup/
