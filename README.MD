@@ -1,7 +1,8 @@
 ### Labels Duplicator
 
-Данный проект автоматизирует развёртывание облачной функции в Yandex Cloud, которая периодически запускается и копирует метки (node_labels) на нужные ресурсы (ВМ, загрузочные диски).
-node_labels (Метки узла) - это пользовательские метки, которые назначаются на группы узлов Managed Service for Kubernetes в Yandex Cloud (подробнее в [документации](https://yandex.cloud/ru/docs/managed-kubernetes/operations/node-group/node-label-management#node-group-creation))
+Данный проект автоматизирует развёртывание облачной функции в _Yandex Cloud_, которая периодически запускается и копирует метки (_node_labels_) на нужные ресурсы (ВМ, загрузочные диски).
+
+_node_labels_ (Метки узла) - это пользовательские метки, которые назначаются на группы узлов _Managed Service for Kubernetes_ в _Yandex Cloud_ (подробнее в [документации](https://yandex.cloud/ru/docs/managed-kubernetes/operations/node-group/node-label-management#node-group-creation))
 
 ---
 
