@@ -14,7 +14,7 @@ resource "random_string" "prefix" {
 
 resource "yandex_iam_service_account" "labels_duplicator_sa" {
   folder_id = var.folder_id
-  name      = "labels-duplicator-sa-${random_string.prefix.result}"
+  name      = "k8s-labels-duplicator-sa-${random_string.prefix.result}"
 }
 
 resource "yandex_resourcemanager_folder_iam_member" "labels_duplicator_sa_roles" {
@@ -26,10 +26,10 @@ resource "yandex_resourcemanager_folder_iam_member" "labels_duplicator_sa_roles"
 
 resource "yandex_function" "labels_duplicator" {
   folder_id          = var.folder_id
-  name               = "labels-duplicator-${random_string.prefix.result}"
-  description        = "labels_duplicator function"
+  name               = "k8s-labels-duplicator-${random_string.prefix.result}"
+  description        = "k8s-labels-duplicator function"
   runtime            = "bash-2204"
-  entrypoint         = "copy_node_labels.sh"
+  entrypoint         = "k8s_labels_duplicator.sh"
   memory             = "128"
   execution_timeout  = "600"
   service_account_id = yandex_iam_service_account.labels_duplicator_sa.id
@@ -43,7 +43,7 @@ resource "yandex_function" "labels_duplicator" {
 }
 
 resource "yandex_function_trigger" "labels_duplicator_trigger" {
-  name      = "labels-duplicator-trigger-${random_string.prefix.result}"
+  name      = "k8s-labels-duplicator-trigger-${random_string.prefix.result}"
 
   function {
     id                 = yandex_function.labels_duplicator.id

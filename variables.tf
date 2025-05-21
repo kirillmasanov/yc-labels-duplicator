@@ -1,10 +1,10 @@
 variable "folder_id" {
-  description = "Folder id for labels_duplicator infrastructure"
+  description = "Folder id for k8s-labels-duplicator infrastructure"
   type        = string
 }
 
 variable "labels_duplicator_sa_roles" {
-  description = "Roles that are needed for labels_duplicator service account"
+  description = "Roles that are needed for k8s-labels-duplicator service account"
   type        = list(string)
-  default     = ["functions.functionInvoker", "compute.editor", "k8s.viewer"]
+  default     = ["functions.functionInvoker", "compute.editor", "k8s.editor"]
 }

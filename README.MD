@@ -1,9 +1,9 @@
-### Labels Duplicator
+### K8s Labels Duplicator
 
-Данный проект автоматизирует развёртывание облачной функции в _Yandex Cloud_, которая периодически запускается и копирует метки (_node_labels_) на нужные ресурсы (ВМ, загрузочные диски).
+Данный проект автоматизирует развёртывание облачной функции в *Yandex Cloud*, которая периодическ вызывается и копирует метки (*labels*) node-групп кластеров mk8s на нужные ресурсы (ВМ, загрузочные диски, ноды кластера).
 
-_node_labels_ (Метки узла) - это пользовательские метки, которые назначаются на группы узлов _Managed Service for Kubernetes_ в _Yandex Cloud_ (подробнее в [документации](https://yandex.cloud/ru/docs/managed-kubernetes/operations/node-group/node-label-management#node-group-creation))
-
+*node_labels* (Метки узла) - это пользовательские метки, которые назначаются на группы узлов *Managed Service for Kubernetes* в *Yandex Cloud* (подробнее в [документации](https://yandex.cloud/ru/docs/managed-kubernetes/operations/node-group/node-label-management#node-group-creation))
+*node_labels* используются в проекте для добавления меток на ноды кластера k8s.
 ---
 
 ### Функционал
@@ -17,7 +17,7 @@ _node_labels_ (Метки узла) - это пользовательские м
 ### Использование
 
 1. Установите [YC CLI](https://cloud.yandex.com/docs/cli/quickstart)
-2. Добавьте переменные окружения для аутентификации terraform в Yandex Cloud
+2. Добавьте переменные окружения для аутентификации *terraform* в *Yandex Cloud*
 ```bash
 export YC_TOKEN=$(yc iam create-token)
 export YC_CLOUD_ID=$(yc config get cloud-id)
@@ -27,6 +27,7 @@ export YC_FOLDER_ID=$(yc config get folder-id)
    ```bash
    git clone https://github.com/kirillmasanov/yc-labels-duplicator
    cd yc-labels-duplicator
+   ```
 4. Настройте файл `terraform.tfvars` или передайте необходимые переменные вручную. Например, создайте `terraform.tfvars`:
 ```bash
 folder_id = "your-folder-id"
