@@ -31,8 +31,8 @@ export YC_FOLDER_ID=$(yc config get folder-id)
 ```
 3. Клонируйте репозиторий и перейдите в папку проекта:
    ```bash
-   git clone https://github.com/kirillmasanov/yc-labels-duplicator
-   cd yc-labels-duplicator
+   git clone https://github.com/yandex-cloud-examples/yc-k8s-labels-duplicator
+   cd yc-k8s-labels-duplicator
    ```
 4. Настройте переменные с помощью файла `terraform.tfvars` или передайте необходимые переменные вручную:
 ```bash
